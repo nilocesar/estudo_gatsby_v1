@@ -7,7 +7,7 @@ module.exports = {
     title: `Curso 2`,
     description: `Curso feito para tentar reestruturar a minha estrutura`,
     author: `@nilocesar`,
-    siteUrl: `https://johndoe.com.br`,
+    siteUrl: `https://nilocesar.netlify.com/`,
     position: `front end` 
   },
   plugins: [
@@ -86,5 +86,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    'gatsby-plugin-netlify-cms'
   ],
 }
