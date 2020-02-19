@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from "../../global/components/Layout"
-import SEO from "../../global/components/Seo"
+import SEO from "../../global/components/seo"
 
 // import { Container } from './styles';
 

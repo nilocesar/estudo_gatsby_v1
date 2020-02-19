@@ -1,22 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Sidebar from "../Sidebar"
-import MenuBar from '../MenuBar'
+import { TransitionPortal } from "gatsby-plugin-transition-link"
 
+import Sidebar from "../Sidebar"
+import MenuBar from "../MenuBar"
+
+import * as S from "./styles"
 import GlobalStyles from "../../styles/global"
-import * as S from './styles';
 
 const Layout = ({ children }) => {
- 
   return (
     <S.LayoutWrapper>
       <GlobalStyles />
-      <aside>
+      <TransitionPortal level="top">
         <Sidebar />
-      </aside>
+      </TransitionPortal>
       <S.LayoutMain>{children}</S.LayoutMain>
-      <MenuBar />
-    </S.LayoutWrapper> 
+      <TransitionPortal level="top">
+        <MenuBar />
+      </TransitionPortal>
+    </S.LayoutWrapper>
   )
 }
 

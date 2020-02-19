@@ -1,25 +1,24 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import * as S from './styles';
+import * as S from "./styles"
 
-export default function Avatar() {
-
+const Avatar = () => {
   const { avatarImage } = useStaticQuery(
     graphql`
-      query{
-        avatarImage: file( relativePath:{ eq: "avatar.jpeg"}){
+      query {
+        avatarImage: file(relativePath: { eq: "avatar.jpeg" }) {
           childImageSharp {
-            fluid(maxWidth: 60, maxHeight: 60) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 60) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
+          }
         }
       }
-    }
-  `)
+    `
+  )
 
-
-  return (
-    <S.AvatarWrapper fluid={avatarImage.childImageSharp.fluid} />
-  );
+  return <S.AvatarWrapper fluid={avatarImage.childImageSharp.fluid} />
 }
+
+export default Avatar
